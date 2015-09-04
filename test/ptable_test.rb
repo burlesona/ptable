@@ -18,6 +18,10 @@ describe PTable do
       assert_equal correct, res
     end
 
+    it "should return the first 100 primes" do
+      assert_equal PTable::FIRST_THOUSAND_PRIMES.take(100), PTable.primes_through(541)
+    end
+
     it "should return the first 1000 primes" do
       assert_equal PTable::FIRST_THOUSAND_PRIMES, PTable.primes_through(7919)
     end
