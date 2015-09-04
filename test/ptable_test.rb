@@ -19,7 +19,11 @@ describe PTable do
     end
 
     it "should return the first 1000 primes" do
-      assert_equal FIRST_THOUSAND_PRIMES, PTable.primes_through(7920)
+      assert_equal PTable::FIRST_THOUSAND_PRIMES, PTable.primes_through(7919)
+    end
+
+    it "should return the first 1000 primes without using the cache" do
+      assert_equal PTable::FIRST_THOUSAND_PRIMES, PTable.primes_through(7919, cache: false)
     end
   end
 
